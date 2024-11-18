@@ -1,0 +1,8 @@
+
+config/*
+__pycache__
+**/__pycache__
+combustion_custom/__pycache__
+*.pyc
+!config/configuration.yaml
+default
