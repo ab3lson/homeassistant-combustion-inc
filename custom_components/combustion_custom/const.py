@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-DOMAIN = "combustion_custom"
+DOMAIN = "combustion"
 EVENT_DISCOVERED = DOMAIN + ".discovered"
 EVENT_REFRESH = DOMAIN + ".refresh"
 

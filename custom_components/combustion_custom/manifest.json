@@ -1,11 +1,18 @@
 {
   "codeowners": ["@whilke"],
   "config_flow": true,
-  "dependencies": [],
-  "documentation": "https://github.com/user/my_component/",
-  "domain": "combustion_custom",
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/whilke/homeassistant-combustion-inc",
+  "domain": "combustion",
   "iot_class": "local_polling",
-  "name": "Combustion Inc Custom",
+  "name": "Combustion Inc",
+  "single_config_entry": true,
+  "bluetooth": [
+    {
+      "manufacturer_id": 2503
+    }
+  ],
+  "integration_type": "hub",
   "requirements": ["combustion_ble", "rich"],
-  "version": "0.0.1"
+  "version": "1.0.0"
 }

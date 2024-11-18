@@ -123,6 +123,16 @@ class CombustionProbeEntity(SensorEntity):
         self.async_schedule_update_ha_state(True)
 
     @property
+    def device_info(self):
+        return {
+            "identifiers": {(DOMAIN, self.device.serial_number_string)},
+            "name": format_device_name(self.device),
+            "manufacturer": "Combustion Inc",
+            "model": self.device.sku,
+            "sw_version": self.device.firmware_version,
+        }
+
+    @property
     def name(self) -> str:
         return self.sensor_name
     
