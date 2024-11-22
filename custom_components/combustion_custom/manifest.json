@@ -13,6 +13,6 @@
     }
   ],
   "integration_type": "hub",
-  "requirements": ["combustion_ble", "rich"],
-  "version": "1.0.0"
+  "requirements": ["combustion_ble"],
+  "version": "1.0.1"
 }
