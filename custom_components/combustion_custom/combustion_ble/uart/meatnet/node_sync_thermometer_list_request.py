@@ -1,6 +1,6 @@
 from typing import Optional
 
-from combustion_ble.uart.meatnet.node_request import NodeRequest
+from ...uart.meatnet.node_request import NodeRequest
 
 
 class Thermometer:

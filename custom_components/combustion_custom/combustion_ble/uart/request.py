@@ -1,6 +1,6 @@
 from typing import Union
 
-from combustion_ble.utilities.crc16ccitt import crc16ccitt
+from ..utilities.crc16ccitt import crc16ccitt
 
 
 class Request:

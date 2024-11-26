@@ -1,7 +1,7 @@
-from combustion_ble.uart.meatnet.node_request import NodeRequest
-from combustion_ble.uart.meatnet.node_request_from_data import node_request_from_data
-from combustion_ble.uart.meatnet.node_response import NodeResponse
-from combustion_ble.uart.meatnet.node_response_from_data import node_response_from_data
+from ...uart.meatnet.node_request import NodeRequest
+from ...uart.meatnet.node_request_from_data import node_request_from_data
+from ...uart.meatnet.node_response import NodeResponse
+from ...uart.meatnet.node_response_from_data import node_response_from_data
 
 
 class NodeUARTMessage:

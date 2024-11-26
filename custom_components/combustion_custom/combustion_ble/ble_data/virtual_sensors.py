@@ -1,6 +1,6 @@
 from enum import Enum
 
-from combustion_ble.ble_data.probe_temperatures import ProbeTemperatures
+from .probe_temperatures import ProbeTemperatures
 
 
 class VirtualCoreSensor(Enum):

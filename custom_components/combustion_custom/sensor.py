@@ -5,9 +5,9 @@ from typing import Optional
 import logging
 from datetime import datetime
 
-from combustion_ble.devices.device import Device
-from combustion_ble.devices.probe import Probe
-from combustion_ble.devices.meat_net_node import MeatNetNode
+from .combustion_ble.devices.device import Device
+from .combustion_ble.devices.probe import Probe
+from .combustion_ble.devices.meat_net_node import MeatNetNode
 from homeassistant import config_entries, core
 from homeassistant.core import callback
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
@@ -221,7 +221,7 @@ class CombustionProbeEntity(SensorEntity):
             sorted_rssi = sorted(self.device.device_manager.devices.items(), key=lambda x: x[1].rssi, reverse=True)
             rssi = sorted_rssi[0][1].rssi
             attribs["best_rssi"] = rssi
-            attribs["hops"] = self.device._last_normal_mode_hop_count.value if self.device._last_normal_mode_hop_count else self.device._last_instant_read_hop_count.value if self.device._last_instant_read_hop_count else None
+            attribs["hops"] = self.device._hop_count.value
 
         return attribs
     

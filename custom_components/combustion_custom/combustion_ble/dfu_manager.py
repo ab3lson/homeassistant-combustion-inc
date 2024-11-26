@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Any
 
-from combustion_ble.exceptions import DFUNotImplementedError
+from .exceptions import DFUNotImplementedError
 
 
 class DFUDeviceType:

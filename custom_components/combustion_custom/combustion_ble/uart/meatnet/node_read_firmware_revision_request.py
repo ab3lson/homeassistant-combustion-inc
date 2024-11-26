@@ -1,7 +1,7 @@
 import struct
 
-from combustion_ble.uart.meatnet.node_message_type import NodeMessageType
-from combustion_ble.uart.meatnet.node_request import NodeRequest
+from ...uart.meatnet.node_message_type import NodeMessageType
+from ...uart.meatnet.node_request import NodeRequest
 
 
 class NodeReadFirmwareRevisionRequest(NodeRequest):

@@ -11,9 +11,9 @@ from bleak import (
 from bleak.backends.device import BLEDevice
 from bleak.backends.scanner import AdvertisementData
 
-from combustion_ble.ble_data.advertising_data import AdvertisingData
-from combustion_ble.ble_data.probe_status import ProbeStatus
-from combustion_ble.const import (
+from .ble_data.advertising_data import AdvertisingData
+from .ble_data.probe_status import ProbeStatus
+from .const import (
     BT_MANUFACTURER_ID,
     DEVICE_STATUS_CHARACTERISTIC,
     FW_VERSION_CHARACTERISTIC,
@@ -23,11 +23,11 @@ from combustion_ble.const import (
     UART_RX_CHARACTERISTIC,
     UART_TX_CHARACTERISTIC,
 )
-from combustion_ble.exceptions import CombustionError
-from combustion_ble.logger import LOGGER
-from combustion_ble.uart import Request, SessionInfoRequest
-from combustion_ble.uart.meatnet import NodeRequest
-from combustion_ble.utilities.asyncio_utils import ensure_future
+from .exceptions import CombustionError
+from .logger import LOGGER
+from .uart import Request, SessionInfoRequest
+from .uart.meatnet import NodeRequest
+from .utilities.asyncio_utils import ensure_future
 
 
 class BleManagerDelegate:
@@ -181,14 +181,11 @@ class BleManager:
         if not self.delegate:
             return
         if identifier in self._pending_connections:
-            LOGGER.debug("Ignoring concurrent connect request for [%s]", identifier)
             return
 
         if identifier in self.clients:
-            LOGGER.debug("Connecting to [%s] via established client", identifier)
             client = self.clients[identifier]
         else:
-            LOGGER.debug("Connecting to [%s] via new client", identifier)
             client = BleakClient(
                 identifier, disconnected_callback=self.disconnected_callback(identifier)
             )
@@ -197,11 +194,9 @@ class BleManager:
         self._pending_connections.add(identifier)
         try:
             await client.connect()
-            LOGGER.debug("Connection to [%s] successful", identifier)
             self.clients[identifier] = client
             successful = True
         except Exception as ex:
-            LOGGER.debug("Failed connecting to [%s]: %s", identifier, ex)
             self.delegate.did_fail_to_connect_to(identifier)
         finally:
             self._pending_connections.discard(identifier)

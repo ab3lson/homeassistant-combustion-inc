@@ -2,13 +2,13 @@ import asyncio
 from datetime import datetime
 from typing import TYPE_CHECKING, Optional
 
-from combustion_ble.devices.device import Device
-from combustion_ble.utilities.asyncio_utils import ensure_future
+from .devices.device import Device
+from .utilities.asyncio_utils import ensure_future
 
 if TYPE_CHECKING:
-    from combustion_ble.device_manager import DeviceManager
-    from combustion_ble.devices.meat_net_node import MeatNetNode
-    from combustion_ble.devices.probe import Probe
+    from .device_manager import DeviceManager
+    from .devices.meat_net_node import MeatNetNode
+    from .devices.probe import Probe
 
 
 class ConnectionManager:

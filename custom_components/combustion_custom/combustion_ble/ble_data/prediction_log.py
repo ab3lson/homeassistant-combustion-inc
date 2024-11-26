@@ -1,9 +1,9 @@
 """Prediction Log."""
 
-from combustion_ble.ble_data.prediction_mode import PredictionMode
-from combustion_ble.ble_data.prediction_state import PredictionState
-from combustion_ble.ble_data.prediction_type import PredictionType
-from combustion_ble.ble_data.virtual_sensors import VirtualSensors
+from .prediction_mode import PredictionMode
+from .prediction_state import PredictionState
+from .prediction_type import PredictionType
+from .virtual_sensors import VirtualSensors
 
 
 class PredictionLog:

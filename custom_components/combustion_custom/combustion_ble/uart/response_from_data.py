@@ -1,15 +1,15 @@
 from typing import Optional
 
-from combustion_ble.logger import LOGGER
-from combustion_ble.uart.log_response import LogResponse
-from combustion_ble.uart.message_type import MessageType
-from combustion_ble.uart.read_over_temperature import ReadOverTemperatureResponse
-from combustion_ble.uart.response import Response
-from combustion_ble.uart.session_info import SessionInfoResponse
-from combustion_ble.uart.set_color import SetColorResponse
-from combustion_ble.uart.set_id import SetIDResponse
-from combustion_ble.uart.set_prediction import SetPredictionResponse
-from combustion_ble.utilities.crc16ccitt import crc16ccitt
+from ..logger import LOGGER
+from .log_response import LogResponse
+from .message_type import MessageType
+from .read_over_temperature import ReadOverTemperatureResponse
+from .response import Response
+from .session_info import SessionInfoResponse
+from .set_color import SetColorResponse
+from .set_id import SetIDResponse
+from .set_prediction import SetPredictionResponse
+from ..utilities.crc16ccitt import crc16ccitt
 
 HEADER_LENGTH = 7
 

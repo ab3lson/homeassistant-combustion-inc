@@ -1,7 +1,7 @@
 import struct
 
-from combustion_ble.uart.meatnet.node_response import NodeResponse
-from combustion_ble.uart.session_info import SessionInformation
+from ...uart.meatnet.node_response import NodeResponse
+from ...uart.session_info import SessionInformation
 
 
 class NodeReadSessionInfoResponse(NodeResponse):

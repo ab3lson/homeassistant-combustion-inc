@@ -2,7 +2,7 @@
 
 from enum import Enum
 
-from combustion_ble.ble_data.virtual_sensors import (
+from .virtual_sensors import (
     VirtualAmbientSensor,
     VirtualCoreSensor,
     VirtualSensors,

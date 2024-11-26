@@ -1,6 +1,6 @@
-from combustion_ble.uart.message_type import MessageType
-from combustion_ble.uart.request import Request
-from combustion_ble.uart.response import Response
+from .message_type import MessageType
+from .request import Request
+from .response import Response
 
 
 class ReadOverTemperatureRequest(Request):

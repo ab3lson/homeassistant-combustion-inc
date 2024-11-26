@@ -2,9 +2,9 @@ import asyncio
 from collections.abc import Callable
 from typing import Optional
 
-from combustion_ble.ble_data.prediction_state import PredictionState
-from combustion_ble.ble_data.prediction_status import PredictionStatus
-from combustion_ble.prediction.prediction_info import PredictionInfo
+from ..ble_data.prediction_state import PredictionState
+from ..ble_data.prediction_status import PredictionStatus
+from ..prediction.prediction_info import PredictionInfo
 
 
 class PredictionManager:

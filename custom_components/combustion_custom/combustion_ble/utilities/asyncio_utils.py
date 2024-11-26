@@ -5,7 +5,7 @@ from typing import Any, Callable, Coroutine
 
 from bleak import BleakError
 
-from combustion_ble.logger import LOGGER
+from ..logger import LOGGER
 
 DoneCallback = Callable[[asyncio.Task], None]
 

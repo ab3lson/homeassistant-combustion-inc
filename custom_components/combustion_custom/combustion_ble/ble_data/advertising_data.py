@@ -3,12 +3,12 @@
 from enum import Enum
 from typing import NamedTuple, Optional
 
-from combustion_ble.ble_data.battery_status_virtual_sensors import (
+from .battery_status_virtual_sensors import (
     BatteryStatusVirtualSensors,
 )
-from combustion_ble.ble_data.hop_count import HopCount
-from combustion_ble.ble_data.mode_id import ModeId
-from combustion_ble.ble_data.probe_temperatures import ProbeTemperatures
+from .hop_count import HopCount
+from .mode_id import ModeId
+from .probe_temperatures import ProbeTemperatures
 
 
 class CombustionProductType(Enum):

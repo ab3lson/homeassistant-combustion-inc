@@ -1,9 +1,9 @@
 import struct
 from typing import Optional
 
-from combustion_ble.ble_data.hop_count import HopCount
-from combustion_ble.ble_data.probe_status import ProbeStatus
-from combustion_ble.uart.meatnet.node_request import NodeRequest
+from ...ble_data.hop_count import HopCount
+from ...ble_data.probe_status import ProbeStatus
+from ...uart.meatnet.node_request import NodeRequest
 
 
 class NodeProbeStatusRequest(NodeRequest):

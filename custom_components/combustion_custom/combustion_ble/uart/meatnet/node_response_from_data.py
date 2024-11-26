@@ -1,25 +1,25 @@
 import struct
 
-from combustion_ble.logger import LOGGER
-from combustion_ble.uart.meatnet.node_message_type import NodeMessageType
-from combustion_ble.uart.meatnet.node_read_firmware_revision_response import (
+from ...logger import LOGGER
+from ...uart.meatnet.node_message_type import NodeMessageType
+from ...uart.meatnet.node_read_firmware_revision_response import (
     NodeReadFirmwareRevisionResponse,
 )
-from combustion_ble.uart.meatnet.node_read_hardware_revision_response import (
+from ...uart.meatnet.node_read_hardware_revision_response import (
     NodeReadHardwareRevisionResponse,
 )
-from combustion_ble.uart.meatnet.node_read_logs_response import NodeReadLogsResponse
-from combustion_ble.uart.meatnet.node_read_model_info_response import (
+from ...uart.meatnet.node_read_logs_response import NodeReadLogsResponse
+from ...uart.meatnet.node_read_model_info_response import (
     NodeReadModelInfoResponse,
 )
-from combustion_ble.uart.meatnet.node_read_session_info_response import (
+from ...uart.meatnet.node_read_session_info_response import (
     NodeReadSessionInfoResponse,
 )
-from combustion_ble.uart.meatnet.node_response import NodeResponse
-from combustion_ble.uart.meatnet.node_set_prediction_request import (
+from ...uart.meatnet.node_response import NodeResponse
+from ...uart.meatnet.node_set_prediction_request import (
     NodeSetPredictionResponse,
 )
-from combustion_ble.utilities.crc16ccitt import crc16ccitt
+from ...utilities.crc16ccitt import crc16ccitt
 
 
 def node_response_from_data(data: bytes):

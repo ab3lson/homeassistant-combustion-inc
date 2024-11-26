@@ -1,6 +1,6 @@
 import struct
 
-from combustion_ble.uart.meatnet.node_response import NodeResponse
+from ...uart.meatnet.node_response import NodeResponse
 
 
 class NodeReadFirmwareRevisionResponse(NodeResponse):

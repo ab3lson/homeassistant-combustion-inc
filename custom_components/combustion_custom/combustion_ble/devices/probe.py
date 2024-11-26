@@ -4,23 +4,23 @@ import asyncio
 from datetime import datetime
 from typing import TYPE_CHECKING, Coroutine, Optional
 
-from combustion_ble.ble_data import AdvertisingData, CombustionProductType
-from combustion_ble.ble_data.battery_status_virtual_sensors import BatteryStatus
-from combustion_ble.ble_data.hop_count import HopCount
-from combustion_ble.ble_data.mode_id import ProbeColor, ProbeID, ProbeMode
-from combustion_ble.ble_data.probe_status import ProbeStatus
-from combustion_ble.ble_data.probe_temperatures import ProbeTemperatures
-from combustion_ble.ble_data.virtual_sensors import VirtualSensors
-from combustion_ble.devices.device import Device
-from combustion_ble.instant_read_filter import InstantReadFilter
-from combustion_ble.logged_probe_data_count import LoggedProbeDataPoint
-from combustion_ble.prediction.prediction_info import PredictionInfo
-from combustion_ble.prediction.prediction_manager import PredictionManager
-from combustion_ble.probe_temperature_log import ProbeTemperatureLog
-from combustion_ble.uart import LogResponse, SessionInformation
-from combustion_ble.uart.meatnet import NodeReadLogsResponse
-from combustion_ble.utilities.asyncio_utils import ensure_future
-from combustion_ble.utilities.monitor import Monitorable, RemoveListener, UpdateListener
+from ..ble_data import AdvertisingData, CombustionProductType
+from ..ble_data.battery_status_virtual_sensors import BatteryStatus
+from ..ble_data.hop_count import HopCount
+from ..ble_data.mode_id import ProbeColor, ProbeID, ProbeMode
+from ..ble_data.probe_status import ProbeStatus
+from ..ble_data.probe_temperatures import ProbeTemperatures
+from ..ble_data.virtual_sensors import VirtualSensors
+from ..devices.device import Device
+from ..instant_read_filter import InstantReadFilter
+from ..logged_probe_data_count import LoggedProbeDataPoint
+from ..prediction.prediction_info import PredictionInfo
+from ..prediction.prediction_manager import PredictionManager
+from ..probe_temperature_log import ProbeTemperatureLog
+from ..uart import LogResponse, SessionInformation
+from ..uart.meatnet import NodeReadLogsResponse
+from ..utilities.asyncio_utils import ensure_future
+from ..utilities.monitor import Monitorable, RemoveListener, UpdateListener
 
 if TYPE_CHECKING:
     from ..device_manager import DeviceManager
@@ -102,6 +102,7 @@ class Probe(Device):
 
         self._id = advertising.mode_id.id
         self._color = advertising.mode_id.color
+        self._hop_count = advertising.hop_count
         self._current_temperatures: Monitorable[Optional[ProbeTemperatures]] = Monitorable(None)
         self._instant_read_celsius: Optional[float] = None
         self._instant_read_fahrenheit: Optional[float] = None
@@ -256,6 +257,8 @@ class Probe(Device):
             self.is_connectable = self.is_connectable
         if ble_identifier is not None:
             self.ble_identifier = ble_identifier
+
+        self._hop_count = advertising.hop_count
 
         # Only update rest of data if not connected to probe.
         # Otherwise, rely on status notifications to update data

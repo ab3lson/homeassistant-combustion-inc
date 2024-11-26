@@ -1,8 +1,8 @@
 import random
 from typing import Optional
 
-from combustion_ble.uart.meatnet.node_message_type import NodeMessageType
-from combustion_ble.utilities.crc16ccitt import crc16ccitt
+from .node_message_type import NodeMessageType
+from ...utilities.crc16ccitt import crc16ccitt
 
 
 class NodeRequest:

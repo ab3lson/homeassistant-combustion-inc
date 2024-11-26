@@ -1,7 +1,7 @@
-from combustion_ble.ble_data.advertising_data import CombustionProductType
-from combustion_ble.ble_data.hop_count import HopCount
-from combustion_ble.logger import LOGGER
-from combustion_ble.uart.meatnet.node_request import NodeRequest
+from ...ble_data.advertising_data import CombustionProductType
+from ...ble_data.hop_count import HopCount
+from ...logger import LOGGER
+from .node_request import NodeRequest
 
 
 class NodeHeartbeatRequest(NodeRequest):

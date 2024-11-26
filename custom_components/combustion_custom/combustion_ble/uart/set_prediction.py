@@ -1,7 +1,7 @@
-from combustion_ble.ble_data.prediction_mode import PredictionMode
-from combustion_ble.uart.message_type import MessageType
-from combustion_ble.uart.request import Request
-from combustion_ble.uart.response import Response
+from ..ble_data.prediction_mode import PredictionMode
+from .message_type import MessageType
+from .request import Request
+from .response import Response
 
 
 class SetPredictionRequest(Request):

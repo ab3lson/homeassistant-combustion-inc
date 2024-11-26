@@ -5,21 +5,21 @@ from typing import Callable, Optional
 
 from bleak import AdvertisementDataCallback
 
-from combustion_ble.ble_data.advertising_data import (
+from .ble_data.advertising_data import (
     AdvertisingData,
     CombustionProductType,
 )
-from combustion_ble.ble_data.hop_count import HopCount
-from combustion_ble.ble_data.probe_status import ProbeStatus
-from combustion_ble.ble_manager import BleManager, BleManagerDelegate, BluetoothMode
-from combustion_ble.connection_manager import ConnectionManager
-from combustion_ble.devices.device import Device
-from combustion_ble.devices.meat_net_node import MeatNetNode
-from combustion_ble.devices.probe import Probe
-from combustion_ble.exceptions import DFUNotImplementedError
-from combustion_ble.logger import LOGGER
-from combustion_ble.message_handlers import MessageHandlers
-from combustion_ble.uart import (
+from .ble_data.hop_count import HopCount
+from .ble_data.probe_status import ProbeStatus
+from .ble_manager import BleManager, BleManagerDelegate, BluetoothMode
+from .connection_manager import ConnectionManager
+from .devices.device import Device
+from .devices.meat_net_node import MeatNetNode
+from .devices.probe import Probe
+from .exceptions import DFUNotImplementedError
+from .logger import LOGGER
+from .message_handlers import MessageHandlers
+from .uart import (
     LogRequest,
     LogResponse,
     ReadOverTemperatureRequest,
@@ -33,7 +33,7 @@ from combustion_ble.uart import (
     SetPredictionResponse,
     responses_from_data,
 )
-from combustion_ble.uart.meatnet import (
+from .uart.meatnet import (
     NodeProbeStatusRequest,
     NodeReadFirmwareRevisionRequest,
     NodeReadFirmwareRevisionResponse,

@@ -2,9 +2,9 @@
 
 from typing import Optional
 
-from combustion_ble.ble_data.prediction_mode import PredictionMode
-from combustion_ble.ble_data.prediction_state import PredictionState
-from combustion_ble.ble_data.prediction_type import PredictionType
+from ..ble_data.prediction_mode import PredictionMode
+from ..ble_data.prediction_state import PredictionState
+from ..ble_data.prediction_type import PredictionType
 
 
 class PredictionInfo:

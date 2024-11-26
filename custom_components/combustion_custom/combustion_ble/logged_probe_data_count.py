@@ -1,7 +1,7 @@
-from combustion_ble.ble_data.probe_status import ProbeStatus
-from combustion_ble.ble_data.probe_temperatures import ProbeTemperatures
-from combustion_ble.uart import LogResponse
-from combustion_ble.uart.meatnet import NodeReadLogsResponse
+from .ble_data.probe_status import ProbeStatus
+from .ble_data.probe_temperatures import ProbeTemperatures
+from .uart import LogResponse
+from .uart.meatnet import NodeReadLogsResponse
 
 
 class LoggedProbeDataPoint:

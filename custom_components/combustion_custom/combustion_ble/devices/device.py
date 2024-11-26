@@ -1,12 +1,12 @@
 from datetime import datetime
 from typing import TYPE_CHECKING, Optional
 
-from combustion_ble.exceptions import DFUNotImplementedError
-from combustion_ble.utilities.asyncio_utils import ensure_future
-from combustion_ble.utilities.monitor import Monitorable, RemoveListener, UpdateListener
+from ..exceptions import DFUNotImplementedError
+from ..utilities.asyncio_utils import ensure_future
+from ..utilities.monitor import Monitorable, RemoveListener, UpdateListener
 
 if TYPE_CHECKING:
-    from combustion_ble.device_manager import DeviceManager
+    from ..device_manager import DeviceManager
 
 
 class Device:

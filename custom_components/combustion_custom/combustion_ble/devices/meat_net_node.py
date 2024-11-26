@@ -1,9 +1,9 @@
 from typing import TYPE_CHECKING
 from datetime import datetime
 
-from combustion_ble.ble_data.advertising_data import AdvertisingData
-from combustion_ble.devices.device import Device
-from combustion_ble.dfu_manager import DFUDeviceType
+from ..ble_data.advertising_data import AdvertisingData
+from ..devices.device import Device
+from ..dfu_manager import DFUDeviceType
 
 if TYPE_CHECKING:
     from ..device_manager import DeviceManager
