@@ -217,6 +217,12 @@ class CombustionProbeEntity(SensorEntity):
         else:
             attribs["options"] = self.sensor_type_data[4]
 
+        if self.sensor_type_data[0] == "RSSI":
+            sorted_rssi = sorted(self.device.device_manager.devices.items(), key=lambda x: x[1].rssi, reverse=True)
+            rssi = sorted_rssi[0][1].rssi
+            attribs["best_rssi"] = rssi
+            attribs["hops"] = self.device._last_normal_mode_hop_count.value if self.device._last_normal_mode_hop_count else self.device._last_instant_read_hop_count.value if self.device._last_instant_read_hop_count else None
+
         return attribs
     
     async def async_update(self) -> None:
