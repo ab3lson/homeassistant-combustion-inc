@@ -95,6 +95,7 @@ def node_response_from_data(data: bytes):
         )
     # TODO: NodeReadOverTemperatureResponse (commented out in Swift impl)
     else:
-        LOGGER.debug("Unhandled node response type: [%s]", message_type)
+        #LOGGER.debug("Unhandled node response type: [%s]", message_type)
+        pass
 
     return NodeResponse(success, request_id, response_id, payload_length)

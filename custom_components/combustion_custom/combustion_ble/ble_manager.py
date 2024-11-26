@@ -289,7 +289,7 @@ class BleManager:
                     hw_revision = data.decode(encoding="utf-8")
                     self.delegate.update_device_hw_revision(identifier, hw_revision)
             except BleakError as be:
-                LOGGER.error("Error reading hardware version from [%s]: %s", identifier, be)
+                LOGGER.debug("Error reading hardware version from [%s]: %s", identifier, be)
             finally:
                 self._pending_gatt_reads.remove(identifier, uart_char)
 
@@ -310,7 +310,7 @@ class BleManager:
                     serial_number = data.decode(encoding="utf-8")
                     self.delegate.update_device_serial_number(identifier, serial_number)
             except BleakError as be:
-                LOGGER.error("Error reading serial number from [%s]: %s", identifier, be)
+                LOGGER.debug("Error reading serial number from [%s]: %s", identifier, be)
             finally:
                 self._pending_gatt_reads.remove(identifier, uart_char)
 
@@ -331,7 +331,7 @@ class BleManager:
                     model_number = data.decode(encoding="utf-8")
                     self.delegate.update_device_model_info(identifier, model_number)
             except BleakError as be:
-                LOGGER.error("Error reading model number from [%s]: %s", identifier, be)
+                LOGGER.debug("Error reading model number from [%s]: %s", identifier, be)
             finally:
                 self._pending_gatt_reads.remove(identifier, uart_char)
 
