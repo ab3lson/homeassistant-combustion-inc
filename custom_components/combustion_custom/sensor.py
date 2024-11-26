@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import timedelta
 from typing import Optional
 import logging
+from datetime import datetime
 
 from combustion_ble.devices.device import Device
 from combustion_ble.devices.probe import Probe
@@ -142,7 +143,8 @@ class CombustionProbeEntity(SensorEntity):
     
     @property
     def available(self) -> str:
-        return not self.device.stale
+        stale = (datetime.now() - self.device.last_update_time).total_seconds() > 15.0
+        return not stale
     
     @property
     def unit_of_measurement(self) -> str:

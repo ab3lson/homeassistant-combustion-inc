@@ -14,5 +14,5 @@
   ],
   "integration_type": "hub",
   "requirements": ["combustion_ble", "rich"],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
