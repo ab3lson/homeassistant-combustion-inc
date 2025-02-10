@@ -45,7 +45,7 @@ async def async_setup_entry(hass: core.HomeAssistant, entry: config_entries.Conf
 
         hass.data[DOMAIN]["mgr"] = mgr
         hass.data[DOMAIN][entry.entry_id] = entry.data
-        await hass.async_create_task(hass.config_entries.async_forward_entry_setup(entry, "sensor"))
+        await hass.async_create_task(hass.config_entries.async_forward_entry_setups(entry, "sensor"))
     except Exception as e:
         _LOGGER.error("Error setting up Combustion Inc Custom component: %s", str(e))
         return False
