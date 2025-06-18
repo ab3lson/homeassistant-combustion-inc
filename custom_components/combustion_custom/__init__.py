@@ -11,8 +11,10 @@ from .const import DOMAIN, EVENT_REFRESH
 
 _LOGGER = logging.getLogger(__name__)
 SCAN_INTERVAL = timedelta(seconds=5)
+PLATFORMS = ["sensor"]
 
 globalMgr: MeatNetManager
+
 
 async def async_setup(hass: core.HomeAssistant, config: dict) -> bool:
     """Set up the Combustion Inc Custom component."""
@@ -32,6 +34,7 @@ async def async_setup(hass: core.HomeAssistant, config: dict) -> bool:
 
     return True
 
+
 async def async_setup_entry(hass: core.HomeAssistant, entry: config_entries.ConfigEntry) -> bool:
 
     try:
@@ -41,16 +44,17 @@ async def async_setup_entry(hass: core.HomeAssistant, entry: config_entries.Conf
         global globalMgr
         globalMgr = mgr
 
-        hass.data.setdefault(DOMAIN,{})
+        hass.data.setdefault(DOMAIN, {})
 
         hass.data[DOMAIN]["mgr"] = mgr
         hass.data[DOMAIN][entry.entry_id] = entry.data
-        await hass.async_create_task(hass.config_entries.async_forward_entry_setups(entry, "sensor"))
+        await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     except Exception as e:
         _LOGGER.error("Error setting up Combustion Inc Custom component: %s", str(e))
         return False
-    
+
     return True
+
 
 async def async_unload_entry(hass: core.HomeAssistant, entry: config_entries.ConfigEntry) -> bool:
 
@@ -70,6 +74,7 @@ async def async_unload_entry(hass: core.HomeAssistant, entry: config_entries.Con
         return False
 
     return True
+
 
 async def cleanup(event):
     try:
